@@ -2,20 +2,20 @@ package com.elietmsoft.gods20project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.StatusBarManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_launch);
         customStatusBar();
+
     }
     void customStatusBar(){
         if(Build.VERSION.SDK_INT>=21){
