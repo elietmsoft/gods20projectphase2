@@ -3,18 +3,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/degrade_presentation"
     android:id="@+id/toolbar">
-
-
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="LEARDERBOAD"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:text="Submit"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorTitle"
+            android:textSize="20sp"
+            android:text="LEARDERBOAD"/>
+        <Button
+            android:layout_width="120sp"
+            android:layout_height="30sp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_round_submit_white"
+            android:padding="2dp"
+            android:textColor="#000"
+            android:text="Submit"/>
+    </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
