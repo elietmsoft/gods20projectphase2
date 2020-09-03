@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.StatusBarManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import com.elietmsoft.gods20project.adapters.ViewPagerAdapter;
 import com.elietmsoft.gods20project.fragments.LearningFragment;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +29,21 @@ public class MainActivity extends AppCompatActivity {
         customStatusBar();
         init();
         setupViewAdapter();
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSubmit();
+            }
+        });
     }
     void init(){
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
+        submit = (Button)findViewById(R.id.tool_submit);
+    }
+    void goToSubmit(){
+        Intent submitIntent = new Intent(MainActivity.this,SubmissionActivity.class);
+        startActivity(submitIntent);
     }
     void setupViewAdapter(){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

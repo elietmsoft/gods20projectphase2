@@ -16,7 +16,6 @@
         android:layout_margin="1dp"
         android:focusable="true"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,14 +24,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="2"
-                android:src="@drawable/top_learner" />
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.5"
+                android:src="@drawable/skill_trimmed" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical|start"
+                android:layout_marginLeft="14dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -40,19 +40,19 @@
                     android:id="@+id/txtName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pharis Muigai"
+                    android:text="Ahmed Hany"
                     android:layout_marginBottom="2dp"
                     android:textColor="#999"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/txtLearningScore"
+                    android:id="@+id/txtSkillScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="223 learning hours, Kenya"
+                    android:text="300 skill IQ Score, Egypt"
                     android:textColor="#999"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

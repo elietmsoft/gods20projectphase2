@@ -18,6 +18,7 @@
             android:textSize="20sp"
             android:text="LEARDERBOAD"/>
         <Button
+            android:id="@+id/tool_submit"
             android:layout_width="120sp"
             android:layout_height="30sp"
             android:layout_marginRight="20dp"
