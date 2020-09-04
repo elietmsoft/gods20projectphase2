@@ -38,11 +38,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
     void init(){
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
@@ -64,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             Window window = this.getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.colorStatusBar));
+            window.setStatusBarColor(getResources().getColor(R.color.colorBackLaunch));
             //window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         }
     }

@@ -1,20 +1,33 @@
 package com.elietmsoft.gods20project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class SubmissionActivity extends AppCompatActivity {
+
+    Toolbar mToolbar;
+    Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submission);
         customStatusBar();
+        init();
+        //setSupportActionBar(mToolbar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+    }
+
+    void init(){
+        mToolbar = (Toolbar)findViewById(R.id.toolbar_submit);
+        btnSubmit = (Button)findViewById(R.id.btnSubmit);
     }
 
     void customStatusBar(){

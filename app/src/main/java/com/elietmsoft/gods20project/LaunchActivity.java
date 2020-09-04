@@ -32,7 +32,7 @@ public class LaunchActivity extends AppCompatActivity {
                 startActivity(launchIntent);
                 LaunchActivity.this.finish();
             }
-        }, 3000L);
+        }, 5000L);
     }
 
     void customStatusBar(){

@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/degrade_presentation"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="30dp"
     android:id="@+id/toolbar">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,13 +13,19 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="-2dp"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="18dp"
             android:src="@drawable/google"
             />
        <LinearLayout
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_marginLeft="10dp"
+           android:layout_marginLeft="8dp"
            android:orientation="vertical">
            <LinearLayout
                android:layout_width="wrap_content"
@@ -28,20 +35,21 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:textColor="@color/colorTitle"
-                   android:textSize="18dp"
+                   android:textSize="16dp"
                    android:textStyle="bold"
                    android:text="Google"/>
                <TextView
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:textColor="@color/colorTitle"
-                   android:textSize="18dp"
+                   android:textSize="16dp"
                    android:text=" Africa"/>
            </LinearLayout>
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/colorTitle"
+               android:textSize="16dp"
                android:text="Developer Scholarship"/>
        </LinearLayout>
     </LinearLayout>

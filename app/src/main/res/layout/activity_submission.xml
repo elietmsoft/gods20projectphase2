@@ -7,7 +7,9 @@
     android:orientation="vertical"
     android:background="@drawable/degrade_presentation"
     tools:context=".SubmissionActivity">
-    <include layout="@layout/toolbar_layout_submit"/>
+    <include
+        android:id="@+id/toolbar_submit"
+        layout="@layout/toolbar_layout_submit"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,16 +17,18 @@
         android:gravity="center"
         android:text="Project Submission"
         android:textColor="#ffae45"
-        android:textSize="20sp"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="22sp"
         android:textStyle="bold" />
     <View
         android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
         android:layout_height="1sp"
-        android:background="#ffae45"/>
+        android:background="@drawable/line_view_project_submit"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="40dp"
         android:orientation="horizontal">
         <EditText
@@ -52,30 +56,34 @@
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:background="@drawable/input_round_white"
         android:hint="Email Address"/>
     <EditText
         android:id="@+id/txtLink"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:background="@drawable/input_round_white"
-        android:hint="Email Address"/>
+        android:hint=" Project on GITHUB (link) "/>
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/btn_round_submit_yellow"
-        android:textSize="20dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAllCaps="false"
+        android:textColor="#dadada"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:text="Submit" />
     
 </LinearLayout>

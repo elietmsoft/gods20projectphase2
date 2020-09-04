@@ -3,27 +3,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/degrade_presentation"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="10dp"
     android:id="@+id/toolbar">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
+            android:text="LEADERBOAD"
             android:textColor="@color/colorTitle"
-            android:textSize="20sp"
-            android:text="LEADERBOAD"/>
+            android:textSize="20sp" />
+
         <Button
             android:id="@+id/tool_submit"
-            android:layout_width="120sp"
+            android:layout_width="100dp"
             android:layout_height="30sp"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/btn_round_submit_white"
             android:padding="2dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:text="Submit"
             android:textColor="#000"
-            android:text="Submit"/>
+            android:textSize="15sp" />
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
