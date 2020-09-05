@@ -17,6 +17,7 @@
         app:tabIndicatorColor="@color/colorTitle"
         app:tabTextColor="#6b6b6b"
         app:tabSelectedTextColor="@color/colorTitle"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         android:background="#00000000"
         >
     </com.google.android.material.tabs.TabLayout>

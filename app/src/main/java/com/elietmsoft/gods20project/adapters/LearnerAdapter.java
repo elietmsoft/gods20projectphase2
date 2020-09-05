@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.elietmsoft.gods20project.R;
 import com.elietmsoft.gods20project.models.Learner;
-import com.elietmsoft.gods20project.models.PojoLearner;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.MyHolder> {
@@ -36,7 +36,11 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.MyHolder
     @Override
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         holder.name.setText(pojoLearners.get(position).getName());
-        holder.hours.setText(""+pojoLearners.get(position).getHours());
+        holder.hours.setText(pojoLearners.get(position).getHours()+" learning hours, "+pojoLearners.get(position).getCountry());
+        Picasso.
+                with(mContext).
+                load(pojoLearners.get(position).getBadgeUrl()).
+                into(holder.badgetUrl);
     }
 
     @Override
@@ -45,12 +49,13 @@ public class LearnerAdapter extends RecyclerView.Adapter<LearnerAdapter.MyHolder
     }
 
     public static class MyHolder extends RecyclerView.ViewHolder{
-        TextView name, hours,country;
+        TextView name, hours;
+        ImageView badgetUrl;
         public MyHolder(@NonNull View itemView){
             super(itemView);
             name = itemView.findViewById(R.id.txtName);
             hours = itemView.findViewById(R.id.txtLearningScore);
-            //country = itemView.findViewById()
+            badgetUrl = itemView.findViewById(R.id.img_badget);
         }
     }
 }

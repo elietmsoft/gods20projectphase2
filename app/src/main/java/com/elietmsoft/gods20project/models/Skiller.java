@@ -1,6 +1,6 @@
 package com.elietmsoft.gods20project.models;
 
-public class Skiller {
+public class Skiller implements Comparable<Skiller> {
     private String name;
     private int score;
     private String country;
@@ -36,5 +36,18 @@ public class Skiller {
 
     public void setBadgeUrl(String badgeUrl) {
         this.badgeUrl = badgeUrl;
+    }
+
+    @Override
+    public int compareTo(Skiller skiller) {
+        if(skiller.getScore() > this.getScore()){
+            return +1;
+        }
+        else if(skiller.getScore() < this.getScore()){
+            return -1;
+        }
+        else {
+            return 0;
+        }
     }
 }

@@ -1,6 +1,8 @@
 package com.elietmsoft.gods20project.models;
 
-public class Learner {
+import java.util.Comparator;
+
+public class Learner implements Comparable<Learner> {
     private String name;
     private int hours;
     private String country;
@@ -36,5 +38,18 @@ public class Learner {
 
     public void setBadgeUrl(String badgeUrl) {
         this.badgeUrl = badgeUrl;
+    }
+
+    @Override
+    public int compareTo(Learner learner) {
+        if(learner.getHours()>this.getHours()){
+            return +1;
+        }
+        else if(learner.getHours()<this.getHours()){
+            return -1;
+        }
+        else {
+            return 0;
+        }
     }
 }

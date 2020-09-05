@@ -1,10 +1,10 @@
 package com.elietmsoft.gods20project.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,22 +16,19 @@ import com.elietmsoft.gods20project.R;
 import com.elietmsoft.gods20project.adapters.LearnerAdapter;
 import com.elietmsoft.gods20project.interfaces.RetrofitClient;
 import com.elietmsoft.gods20project.models.Learner;
-import com.elietmsoft.gods20project.models.LearnerList;
-import com.elietmsoft.gods20project.models.PojoLearner;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class LearningFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     LearnerAdapter adapter;
-    List<Learner> list = new ArrayList<>();
+    List<Learner> list;
 
     @Nullable
     @Override
@@ -44,45 +41,28 @@ public class LearningFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        Call<LearnerList> call = RetrofitClient.getInstance().getApi().getLearners();
-        call.enqueue(new Callback<LearnerList>() {
+        Call<List<Learner>> call = RetrofitClient.getInstance().getApi().getLearners();
+        call.enqueue(new Callback<List<Learner>>() {
             @Override
-            public void onResponse(Call<LearnerList> call, Response<LearnerList> response) {
-                //list = response.body().getLearners();
-                //adapter = new LearnerAdapter(getActivity(),list);
-                //recyclerView.setAdapter(adapter);
+            public void onResponse(Call<List<Learner>> call, Response<List<Learner>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(getActivity(),"Error :"+response.code(),Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                list = response.body();
+                //sort by hours
+                Collections.sort(list);
+                adapter = new LearnerAdapter(getActivity(),list);
+                recyclerView.setAdapter(adapter);
             }
+
             @Override
-            public void onFailure(Call<LearnerList> call, Throwable t) {
-                Log.d("LearningFragment","**************************"+t.getMessage());
+            public void
+            onFailure(Call<List<Learner>> call, Throwable t) {
+                Toast.makeText(getActivity(),"Failure :"+t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
-
         return view;
     }
-    /*
-    private void listGods(){
-        list = new ArrayList<>();
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-        list.add(new PojoLearner("Elie Tshibangu","223 learning hours, RDC"));
-    }
-     */
+
 }
