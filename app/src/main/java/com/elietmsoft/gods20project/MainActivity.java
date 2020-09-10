@@ -17,6 +17,7 @@ import com.elietmsoft.gods20project.adapters.ViewPagerAdapter;
 import com.elietmsoft.gods20project.fragments.LearningFragment;
 import com.elietmsoft.gods20project.fragments.SkillFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.jaeger.library.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        StatusBarUtil.setTransparent(MainActivity.this);
+    }
+
     void init(){
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
@@ -55,12 +62,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
     void customStatusBar(){
-        if(Build.VERSION.SDK_INT>=21){
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.colorBackLaunch));
-            //window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-        }
+        StatusBarUtil.setTransparent(MainActivity.this);
     }
 }

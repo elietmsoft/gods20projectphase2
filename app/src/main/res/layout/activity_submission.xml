@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/degrade_presentation"
+    android:id="@+id/layout_main"
     tools:context=".SubmissionActivity">
     <include
         android:id="@+id/toolbar_submit"
@@ -26,65 +27,79 @@
         android:layout_height="1sp"
         android:background="@drawable/line_view_project_submit"/>
     <LinearLayout
+        android:id="@+id/layout_submit"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/txtFirstName"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="First Name"
-            android:layout_marginRight="10dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/txtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="First Name"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/input_round_white"
+                android:padding="5dp"
+                />
+            <EditText
+                android:id="@+id/txtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:padding="5dp"
+                android:hint="Last Name"
+                android:background="@drawable/input_round_white"
+                />
+        </LinearLayout>
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/input_round_white"
-            android:padding="5dp"
-            />
-        <EditText
-            android:id="@+id/txtLastName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginRight="10dp"
             android:padding="5dp"
-            android:hint="Last Name"
             android:background="@drawable/input_round_white"
-            />
+            android:hint="Email Address"/>
+        <EditText
+            android:id="@+id/txtLink"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="47dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@drawable/input_round_white"
+            android:hint=" Project on GITHUB (link) "/>
+
     </LinearLayout>
-    <EditText
-        android:id="@+id/txtEmail"
+    <LinearLayout
+        android:id="@+id/decor_bottom"
+        android:layout_marginTop="-50dp"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="5dp"
-        android:background="@drawable/input_round_white"
-        android:hint="Email Address"/>
-    <EditText
-        android:id="@+id/txtLink"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="5dp"
-        android:background="@drawable/input_round_white"
-        android:hint=" Project on GITHUB (link) "/>
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="160dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/btn_round_submit_yellow"
-        android:fontFamily="sans-serif-condensed"
-        android:textAllCaps="false"
-        android:textColor="#dadada"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:text="Submit" />
-    
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/debu">
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:background="@drawable/btn_round_submit_yellow"
+            android:fontFamily="serif"
+            android:textAllCaps="false"
+            android:textColor="#dadada"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Submit" />
+    </LinearLayout>
+
 </LinearLayout>
 

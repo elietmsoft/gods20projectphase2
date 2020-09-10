@@ -12,10 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.elietmsoft.gods20project.LaunchActivity;
 import com.elietmsoft.gods20project.R;
 import com.elietmsoft.gods20project.adapters.LearnerAdapter;
 import com.elietmsoft.gods20project.interfaces.RetrofitClient;
 import com.elietmsoft.gods20project.models.Learner;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +37,9 @@ public class LearningFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.learning_layout,container,false);
-
+        //
+        StatusBarUtil.setTransparent(getActivity());
+        //
         recyclerView = view.findViewById(R.id.list_learning);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());

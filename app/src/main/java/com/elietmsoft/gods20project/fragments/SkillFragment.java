@@ -18,6 +18,7 @@ import com.elietmsoft.gods20project.adapters.SkillerAdapter;
 import com.elietmsoft.gods20project.interfaces.RetrofitClient;
 import com.elietmsoft.gods20project.models.Learner;
 import com.elietmsoft.gods20project.models.Skiller;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +38,9 @@ public class SkillFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.skill_layout,container,false);
-
+        //
+        StatusBarUtil.setTransparent(getActivity());
+        //
         recyclerView = view.findViewById(R.id.list_skills);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());

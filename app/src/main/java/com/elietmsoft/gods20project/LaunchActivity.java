@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.jaeger.library.StatusBarUtil;
+
 public class LaunchActivity extends AppCompatActivity {
 
     @Override
@@ -17,12 +19,12 @@ public class LaunchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
         customStatusBar();
-
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        StatusBarUtil.setTransparent(LaunchActivity.this);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable()
         {
@@ -36,12 +38,6 @@ public class LaunchActivity extends AppCompatActivity {
     }
 
     void customStatusBar(){
-        if(Build.VERSION.SDK_INT>=21){
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.colorStatusBar));
-            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-        }
+        StatusBarUtil.setTransparent(LaunchActivity.this);
     }
 }

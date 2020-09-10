@@ -1,25 +1,23 @@
 package com.elietmsoft.gods20project.interfaces;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
-    private static final String BASE_URL = "https://gadsapi.herokuapp.com/api/";
-    private static RetrofitClient mInstance;
+public class RetrofitClientEnvoi {
+    private static final String BASE_URL = "https://docs.google.com/forms/d/e/";
+    private static RetrofitClientEnvoi mInstance;
     private Retrofit retrofit;
 
-    private RetrofitClient(){
+    private RetrofitClientEnvoi(){
         retrofit = new Retrofit.Builder()
                   .baseUrl(BASE_URL)
                   .addConverterFactory(GsonConverterFactory.create())
                   .build();
     }
 
-    public static synchronized RetrofitClient getInstance(){
+    public static synchronized RetrofitClientEnvoi getInstance(){
         if(mInstance==null){
-            mInstance = new RetrofitClient();
+            mInstance = new RetrofitClientEnvoi();
         }
         return mInstance;
     }
