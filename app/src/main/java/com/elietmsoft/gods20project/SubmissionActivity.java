@@ -1,13 +1,11 @@
 package com.elietmsoft.gods20project;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -15,8 +13,6 @@ import android.util.Patterns;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.URLUtil;
 import android.widget.Button;
 import android.widget.EditText;
@@ -160,9 +156,12 @@ public class SubmissionActivity extends AppCompatActivity {
             {
                 public void run()
                 {
+                    dialog.dismiss();
                     layoutSubmit.setVisibility(View.VISIBLE);
+                    btnSubmit.setVisibility(View.VISIBLE);
+
                 }
-            }, 3000L);
+            }, 1000L);
 
         }
         else
@@ -178,9 +177,11 @@ public class SubmissionActivity extends AppCompatActivity {
             {
                 public void run()
                 {
+                    dialog.dismiss();
                     layoutSubmit.setVisibility(View.VISIBLE);
+                    btnSubmit.setVisibility(View.VISIBLE);
                 }
-            }, 3000L);
+            }, 1000L);
 
         }
     }
@@ -228,7 +229,7 @@ public class SubmissionActivity extends AppCompatActivity {
             {
                 dialog.show();
             }
-        }, 3000L);
+        }, 2000L);
         //
     }
 
@@ -252,7 +253,7 @@ public class SubmissionActivity extends AppCompatActivity {
             }
         }
         else {
-
+            Toast.makeText(SubmissionActivity.this,"Error",Toast.LENGTH_SHORT).show();
         }
     }
 }
