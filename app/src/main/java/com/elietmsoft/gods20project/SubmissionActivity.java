@@ -228,7 +228,7 @@ public class SubmissionActivity extends AppCompatActivity {
             {
                 dialog.show();
             }
-        }, 1000L);
+        }, 3000L);
         //
     }
 
@@ -242,8 +242,9 @@ public class SubmissionActivity extends AppCompatActivity {
             if(isValidEmail(email)){
                 if(isValid(link)){
                    //btnOptionsWithQuestion(email,firstName,lastName,link);
-                    String views = "toast_custom_error";
-                    optionsMessage(views);
+                    optionsMessageDialog();
+                    //String views = "toast_custom_error";
+                    //optionsMessage(views);
                 }
                 else{
                     editLinkGithub.setError("Url invalide!!");

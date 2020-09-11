@@ -55,6 +55,7 @@
                     android:text="223 learning hours, Kenya"
                     android:textColor="#999"
                     android:fontFamily="@font/roboto_regular"
+                    android:textStyle="normal"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
