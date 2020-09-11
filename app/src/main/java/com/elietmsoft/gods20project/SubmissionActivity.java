@@ -241,10 +241,7 @@ public class SubmissionActivity extends AppCompatActivity {
         if(test){
             if(isValidEmail(email)){
                 if(isValid(link)){
-                   //btnOptionsWithQuestion(email,firstName,lastName,link);
-                    optionsMessageDialog();
-                    //String views = "toast_custom_error";
-                    //optionsMessage(views);
+                   btnOptionsWithQuestion(email,firstName,lastName,link);
                 }
                 else{
                     editLinkGithub.setError("Url invalide!!");
